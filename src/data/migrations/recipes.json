@@ -1,0 +1,282 @@
+[
+  {
+    "id": "8a2e615e-d0ba-4a09-a3a4-5cc7b7d1dd5d",
+    "title": "Smoothie Tropical com Banana Morango e Manga",
+    "description": "Prepare, leve ao forno e sirva",
+    "created_at": "2023-01-01 01:28:15",
+    "author_id_fk": "c0d0581d-cdb2-4676-b492-6c023af37cb0"
+  },
+  {
+    "id": "1e41d307-042c-4b9a-bb55-aa4df61aaf2b",
+    "title": "Creme Inglês com Frutas e Suspiro",
+    "description": "Prepare, deixe esfriar e sirva",
+    "created_at": "2023-01-01 02:40:38",
+    "author_id_fk": "ebdacddd-bbb5-4c43-9dae-ca8a090a7379"
+  },
+  {
+    "id": "2b75d6f5-d0e6-4d54-b579-cfee90b5367e",
+    "title": "Torta de Liquidificador",
+    "description": "Junte tudo no liquidificador, leve ao forno por 40 minutos e sirva",
+    "created_at": "2023-01-02 01:28:15",
+    "author_id_fk": "cd63b9b7-4db1-4a72-b32d-be2bef2ef742"
+  },
+  {
+    "id": "e8b17917-e9fb-4988-aad8-33516bb74da8",
+    "title": "Pernil Assado Com Maionese",
+    "description": "Prepare, leve ao forno e sirva",
+    "created_at": "2023-01-02 17:03:48",
+    "author_id_fk": "c305acbc-f973-4c12-8789-1518a0aa6d23"
+  },
+  {
+    "id": "4b546fdd-a29d-45a5-8de1-ffae8375ca2e",
+    "title": "Salpicão De Peru",
+    "description": "Mexa bem, leve ao fogo alto por 7 minutos e depois sirva",
+    "created_at": "2023-01-03 10:41:02",
+    "author_id_fk": "09f1ffb2-4746-4f8a-8da2-e892e923520b"
+  },
+  {
+    "id": "c7e48b82-9451-4a7b-a331-bb522bd812b4",
+    "title": "Fricassé De Frango Assado",
+    "description": "Junte tudo no liquidificador, leve ao forno por 40 minutos e sirva",
+    "created_at": "2023-01-03 19:25:19",
+    "author_id_fk": "ae2d5563-17eb-43f6-a8de-9eed2745188f"
+  },
+  {
+    "id": "ac7f5113-e707-4554-9ca4-a265d1a54a63",
+    "title": "Torta De Hot-Dog Fácil",
+    "description": "Prepare, deixe esfriar e sirva",
+    "created_at": "2023-01-04 06:21:56",
+    "author_id_fk": "29a12696-37d6-42e1-a638-b523aabe9de2"
+  },
+  {
+    "id": "d0812e5c-1dc4-4185-8ab7-ca221a92b0e0",
+    "title": "Bolo de Leite Simples",
+    "description": "Prepare, deixe esfriar e sirva",
+    "created_at": "2023-01-04 22:00:17",
+    "author_id_fk": "ec61f7f6-840d-4088-9c04-8ed0aca8f25c"
+  },
+  {
+    "id": "5e7635ea-95fd-42ef-a841-05874e5e7cdd",
+    "title": "Sopa de Capeletti com Cenoura",
+    "description": "Mexa bem, leve ao fogo alto por 7 minutos e depois sirva",
+    "created_at": "2023-01-05 11:58:01",
+    "author_id_fk": "1af6459b-c9ef-407d-8a7f-13245f0c8e2e"
+  },
+  {
+    "id": "c72aeb0f-0713-42c3-96c1-d96537bcbb35",
+    "title": "Legumes com peito de frango",
+    "description": "Prepare, leve ao forno e sirva",
+    "created_at": "2023-01-05 14:36:23",
+    "author_id_fk": "d8863eeb-d9ca-4e81-9586-5d65abe41dcf"
+  },
+  {
+    "id": "eff3873e-d4ed-46c0-8a30-2a7a5f2e0531",
+    "title": "Bolo Formigueiro Fácil e Rápido",
+    "description": "retire do fogo e leve para a geladeira por 12 horas, depois, sirva",
+    "created_at": "2023-01-06 10:01:15",
+    "author_id_fk": "8c4e4c88-5831-4112-b0bf-b8df865c0a92"
+  },
+  {
+    "id": "7feb3364-c29c-43ae-b925-dd9ad8c4ef9f",
+    "title": "Bolo Natalino Sem Glúten",
+    "description": "Junte tudo no liquidificador, leve ao forno por 40 minutos e sirva",
+    "created_at": "2023-01-06 16:26:49",
+    "author_id_fk": "ebdacddd-bbb5-4c43-9dae-ca8a090a7379"
+  },
+  {
+    "id": "f16fb861-844f-4ce8-8330-bfc1aaedb266",
+    "title": "Filão com Frango Cremoso Picante",
+    "description": "Prepare, deixe esfriar e sirva",
+    "created_at": "2023-01-07 04:30:20",
+    "author_id_fk": "bd7c25f6-3a37-4d27-82db-a2ca80ef145a"
+  },
+  {
+    "id": "4a07a5e6-1faa-445f-a14b-da1fb98efff6",
+    "title": "Sanduíche Doce com Supreme",
+    "description": "Mexa bem, leve ao fogo alto por 7 minutos e depois sirva",
+    "created_at": "2023-01-07 09:07:21",
+    "author_id_fk": "0ea881f0-5a86-4f98-b8f6-b7bedc8f67d4"
+  },
+  {
+    "id": "27d2b653-e200-4d1c-b073-c194d6a9bf27",
+    "title": "Misto Quente Crocante",
+    "description": "Prepare, leve ao forno e sirva",
+    "created_at": "2023-01-08 18:54:26",
+    "author_id_fk": "d9780c5d-b00e-4234-ab8d-50a7b2ceb22a"
+  },
+  {
+    "id": "b1b217b5-6f1e-45d3-aa51-057445a2b72e",
+    "title": "Penne ao Molho Cremoso com Cogumelos",
+    "description": "retire do fogo e leve para a geladeira por 12 horas, depois, sirva",
+    "created_at": "2023-01-08 22:17:47",
+    "author_id_fk": "d5fbea4c-0175-48d9-bdca-958278eda707"
+  },
+  {
+    "id": "df9e01d2-a1b3-42c1-a69e-f08cd276944d",
+    "title": "Salada de Batata Doce Natalina",
+    "description": "Junte tudo no liquidificador, leve ao forno por 40 minutos e sirva",
+    "created_at": "2023-01-09 12:41:17",
+    "author_id_fk": "c606d12a-fc2b-4f49-b7ce-98cba59c1397"
+  },
+  {
+    "id": "a2eb989a-dfed-4c73-9b2d-4469ff1c9fb5",
+    "title": "Salada de Batata com Legumes",
+    "description": "Prepare, deixe esfriar e sirva",
+    "created_at": "2023-01-09 13:38:10",
+    "author_id_fk": "9c9d4b4b-bfc8-46a6-a33b-e0f3ffbaf41b"
+  },
+  {
+    "id": "0cf55a6a-a27b-4128-9aa6-a9dd172a5969",
+    "title": "Pão de Alho Cremoso",
+    "description": "Mexa bem, leve ao fogo alto por 7 minutos e depois sirva",
+    "created_at": "2023-01-10 15:13:09",
+    "author_id_fk": "ec61f7f6-840d-4088-9c04-8ed0aca8f25c"
+  },
+  {
+    "id": "5c2d6953-3022-4f5f-8800-84881b71f2f3",
+    "title": "Sanduíche de Bacon com Salada",
+    "description": "Junte tudo no liquidificador, leve ao forno por 40 minutos e sirva",
+    "created_at": "2023-01-10 03:05:24",
+    "author_id_fk": "9c9d4b4b-bfc8-46a6-a33b-e0f3ffbaf41b"
+  },
+  {
+    "id": "1e70587e-e47c-4708-982b-fc8379de59a6",
+    "title": "Bolinho de Chuva Vegano",
+    "description": "Prepare, deixe esfriar e sirva",
+    "created_at": "2023-01-11 14:11:41",
+    "author_id_fk": "1af6459b-c9ef-407d-8a7f-13245f0c8e2e"
+  },
+  {
+    "id": "47249978-d1eb-4fe4-b3a0-0b32c2abb373",
+    "title": "Mousse de Cacau Vegana",
+    "description": "Prepare, leve ao forno e sirva",
+    "created_at": "2023-01-11 16:34:40",
+    "author_id_fk": "8dbff690-6dbe-4ef8-bb95-c6fdfd02cc64"
+  },
+  {
+    "id": "1816f304-9112-42fd-b20d-c272420d3283",
+    "title": "Pudim Lisinho",
+    "description": "retire do fogo e leve para a geladeira por 12 horas, depois, sirva",
+    "created_at": "2023-01-12 08:28:15",
+    "author_id_fk": "18ea68cd-313f-4fa0-8758-62051155977c"
+  },
+  {
+    "id": "d9fcabcb-ac4a-4298-b7fb-ccabb75c75f0",
+    "title": "Penne de Abóbora ao Molho Homus Alibey",
+    "description": "Junte tudo no liquidificador, leve ao forno por 40 minutos e sirva",
+    "created_at": "2023-01-12 15:42:03",
+    "author_id_fk": "efea6c08-efc2-4822-a0c5-d794d575f7b2"
+  },
+  {
+    "id": "b4b11065-a51d-4912-9dd0-0950d5250e2a",
+    "title": "Penne de Abóbora ao Molho Bolonhesa",
+    "description": "Mexa bem, leve ao fogo alto por 7 minutos e depois sirva",
+    "created_at": "2023-01-13 01:28:15",
+    "author_id_fk": "8c4e4c88-5831-4112-b0bf-b8df865c0a92"
+  },
+  {
+    "id": "4dec7110-72b0-4af4-b10a-47c876f258db",
+    "title": "Talharim de Espinafre ao Molho Pesto de Rúcula",
+    "description": "Prepare, leve ao forno e sirva",
+    "created_at": "2023-01-13 16:08:27",
+    "author_id_fk": "8dbff690-6dbe-4ef8-bb95-c6fdfd02cc64"
+  },
+  {
+    "id": "1d4cf63b-c70e-4358-bff3-0cef9f5ef06e",
+    "title": "Fusilli com Batata-doce ",
+    "description": "Prepare, deixe esfriar e sirva",
+    "created_at": "2023-01-14 09:08:36",
+    "author_id_fk": "0ea881f0-5a86-4f98-b8f6-b7bedc8f67d4"
+  },
+  {
+    "id": "331c4c6e-3a8d-4d23-ad8a-8dabd5af512b",
+    "title": "Mini Magnum com Panetone",
+    "description": "retire do fogo e leve para a geladeira por 12 horas, depois, sirva",
+    "created_at": "2023-01-14 15:40:01",
+    "author_id_fk": "d8863eeb-d9ca-4e81-9586-5d65abe41dcf"
+  },
+  {
+    "id": "01c32fb4-ed0a-4633-97aa-2c04cc1f2326",
+    "title": "Sopa fria de beterraba com azeite de hortelã",
+    "description": "Junte tudo no liquidificador, leve ao forno por 40 minutos e sirva",
+    "created_at": "2023-01-15 20:17:46",
+    "author_id_fk": "c606d12a-fc2b-4f49-b7ce-98cba59c1397"
+  },
+  {
+    "id": "6d0eef66-2bbe-42bb-9cfc-19c0b916c588",
+    "title": "Lámen com camarão e leite de coco",
+    "description": "Prepare, deixe esfriar e sirva",
+    "created_at": "2023-01-15 20:40:15",
+    "author_id_fk": "09f1ffb2-4746-4f8a-8da2-e892e923520b"
+  },
+  {
+    "id": "942be984-b817-4094-b69e-8ffde8a8436c",
+    "title": "Bolo de sorvete",
+    "description": "Prepare, leve ao forno e sirva",
+    "created_at": "2023-01-16 12:18:30",
+    "author_id_fk": "cd63b9b7-4db1-4a72-b32d-be2bef2ef742"
+  },
+  {
+    "id": "48b398c4-9d1a-4675-bffe-779d3df73de9",
+    "title": "Filé de Frango Recheado",
+    "description": "Mexa bem, leve ao fogo alto por 7 minutos e depois sirva",
+    "created_at": "2023-01-16 16:16:40",
+    "author_id_fk": "ae2d5563-17eb-43f6-a8de-9eed2745188f"
+  },
+  {
+    "id": "bbf76442-65e1-4327-b80a-a1c3eb70c1a7",
+    "title": "Creme de mandioquinha com azeite de salsinha e bacon crocante",
+    "description": "retire do fogo e leve para a geladeira por 12 horas, depois, sirva",
+    "created_at": "2023-01-17 02:33:45",
+    "author_id_fk": "d5fbea4c-0175-48d9-bdca-958278eda707"
+  },
+  {
+    "id": "f12bb9a3-40ab-44f0-94c7-801ef233d193",
+    "title": "Bolo de Limão Verde",
+    "description": "Junte tudo no liquidificador, leve ao forno por 40 minutos e sirva",
+    "created_at": "2023-01-17 17:31:28",
+    "author_id_fk": "c0d0581d-cdb2-4676-b492-6c023af37cb0"
+  },
+  {
+    "id": "e0832a06-df28-4444-be98-e8304c9265c9",
+    "title": "Falsa Bacalhoada de Merluza",
+    "description": "Mexa bem, leve ao fogo alto por 7 minutos e depois sirva",
+    "created_at": "2023-01-18 04:36:58",
+    "author_id_fk": "c305acbc-f973-4c12-8789-1518a0aa6d23"
+  },
+  {
+    "id": "d4588455-cc0a-4038-a960-ee4c983309f2",
+    "title": "Atum tataki com salada oriental",
+    "description": "Prepare, leve ao forno e sirva",
+    "created_at": "2023-01-18 17:18:19",
+    "author_id_fk": "29a12696-37d6-42e1-a638-b523aabe9de2"
+  },
+  {
+    "id": "e0248f96-34c4-4a5a-b893-1aa2e3b22fc2",
+    "title": "Pizza de liquidificador de escarola",
+    "description": "Prepare, deixe esfriar e sirva",
+    "created_at": "2023-01-19 14:11:03",
+    "author_id_fk": "d9780c5d-b00e-4234-ab8d-50a7b2ceb22a"
+  },
+  {
+    "id": "25b95c20-48dc-4c73-86ad-efd004b5d93c",
+    "title": "Pastel de Frango",
+    "description": "Junte tudo no liquidificador, leve ao forno por 40 minutos e sirva",
+    "created_at": "2023-01-19 18:30:00",
+    "author_id_fk": "efea6c08-efc2-4822-a0c5-d794d575f7b2"
+  },
+  {
+    "id": "851b40b6-ff3d-4ae7-a786-e45dd1997a97",
+    "title": "Bolo Souza Leão",
+    "description": "Prepare, leve ao forno e sirva",
+    "created_at": "2023-01-20 10:41:16",
+    "author_id_fk": "bd7c25f6-3a37-4d27-82db-a2ca80ef145a"
+  },
+  {
+    "id": "050587b5-bf54-4bde-906a-3837eba13ced",
+    "title": "Filé de tilápia com crosta de castanha de caju",
+    "description": "Mexa bem, leve ao fogo alto por 7 minutos e depois sirva",
+    "created_at": "2023-01-20 14:53:32",
+    "author_id_fk": "18ea68cd-313f-4fa0-8758-62051155977c"
+  }
+]
