@@ -14,9 +14,9 @@ export class Authenticator {
         return token
     }
 
-    getTokenData = (token: AuthenticationTokenDTO): AuthenticationDataDTO => {
+    getTokenData = (token: AuthenticationTokenDTO) => {
         try {
-            const payload = jwt.verify(token.getToken(), process.env.JWT_KEY as string) as AuthenticationDataDTO
+            const payload = jwt.verify(token.getToken(), process.env.JWT_KEY as string)as {id:string, role:string}
             return payload
         } catch (error: any) {
             console.log(error.message)
