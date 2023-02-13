@@ -1,7 +1,7 @@
-import { UserBusiness } from "../business/userBusiness";
+import { UserBusiness } from '../business/userBusiness';
 import { Request, Response } from 'express';
-import * as dto from "../model/class/DTO/userDTOs";
-import { AuthenticationTokenDTO } from "../model/class/DTO/authenticationsDTO";
+import * as dto from '../model/class/DTO/userDTOs';
+import { AuthenticationTokenDTO } from '../model/class/DTO/authenticationsDTOs';
 
 
 export class UserController {
@@ -26,33 +26,16 @@ export class UserController {
       res.status(400).send(error.message);
     }
   };
-  
 
-  public login = async (req: Request, res: Response): Promise<void> => {
 
-    try {
 
-      const { email, password } = req.body
-
-      const input = new dto.LoginInputDTO(
-        email,
-        password
-      )
-
-      const result = await this.userBusiness.login(input)
-      res.status(201).send(result)
-
-    } catch (error: any) {
-      res.status(400).send(error.message);
-    }
-  };
 
 
 
   public getSelfProfile = async (req: Request, res: Response): Promise<void> => {
 
     try {
-      
+
       const token = req.headers.auth as string
       const input = new AuthenticationTokenDTO(token)
 
@@ -68,7 +51,7 @@ export class UserController {
   public getUserProfile = async (req: Request, res: Response): Promise<void> => {
 
     try {
-      
+
       const token = req.headers.auth as string
       const input = new AuthenticationTokenDTO(token)
 

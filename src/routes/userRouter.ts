@@ -12,8 +12,6 @@ const userController = new UserController(userBusiness)
 
 userRouter.post('/create', userController.creatUser)
 
-userRouter.post('/login', userController.login)
-
 userRouter.get('/profile', userController.getSelfProfile)
 
 userRouter.get('/profile/:userId', userController.getUserProfile)

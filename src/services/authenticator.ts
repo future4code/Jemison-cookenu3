@@ -1,4 +1,4 @@
-import { AuthenticationDataDTO, AuthenticationTokenDTO } from './../model/class/DTO/authenticationsDTO';
+import { AuthenticationDataDTO, AuthenticationTokenDTO } from '../model/class/DTO/authenticationsDTOs';
 import { Unauthorized } from '../error/customError';
 import * as jwt from 'jsonwebtoken'
 
