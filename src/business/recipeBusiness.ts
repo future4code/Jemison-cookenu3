@@ -1,33 +1,56 @@
-import { RecipeDatabase } from "../data/recipeDatabase";
-import { CustomError } from "../error/customError";
-import { Authenticator } from "../services/authenticator";
-import { IdGenerator } from "../services/idGenerator";
-import * as dto from "../model/class/DTO/authenticationsDTO"
-import { AuthenticationTokenDTO } from "../model/class/DTO/authenticationsDTO";
+
+import { RecipeClass } from './../model/class/recipeClass';
+import { AuthenticationTokenDTO } from '../model/class/DTO/authenticationsDTOs';
+import { RecipeRepository } from './repository/rescieRepository';
+import { Authenticator } from '../services/authenticator';
+import { IdGenerator } from '../services/idGenerator';
+import { CustomError } from '../error/customError';
+import * as dto from '../model/class/DTO/recipeDTOs';
+import * as err from '../error/recipeCustomError';
 
 export class RecipeBusiness {
-    private recipeDatabase = new RecipeDatabase();
 
-    createRecipe = async (userId: dto.AuthenticationTokenDTO, input: any) => {
+    constructor(private recipeDatabase: RecipeRepository) { }
+
+    createRecipe = async (input: dto.RecipeControllerInputDTO, token: AuthenticationTokenDTO):Promise<dto.CreationRecipeReturnDTO> => {
         try {
 
-            const autheticator = new Authenticator()
-            autheticator.getTokenData(userId)
+            const authenticator = new Authenticator()
+            const { id } = authenticator.getTokenData(token)
 
-            const { title, description } = input
 
-            if (!title || !description) {
-                throw new CustomError(400, "Preencha o título e a descrição da receita")
+            if (!input.getTitle()) {
+                throw new err.MissingTitle()
             }
 
-            const id = new IdGenerator()
+            if(!input.getDescription()){
+                throw new err.MissingDescription()
+            }
 
-            await this.recipeDatabase.insertRecipes({
-                id,
-                title,
-                description,
-                created_at: new Date()
-            })
+            const recipeNameExists = await this.recipeDatabase.getRecipeByName(input.getTitle())
+            if(recipeNameExists){
+                throw new err.RecipeTitleAlreadyExists()
+            }else{
+
+            const idGenerator = new IdGenerator()
+            const recipeId = idGenerator.generateId()
+
+            const newRecipe = new RecipeClass(
+                recipeId,
+                input.getTitle(),
+                input.getDescription(),
+                id
+            )
+            await this.recipeDatabase.insertRecipe(newRecipe)
+
+           const result = new dto.CreationRecipeReturnDTO(
+            'Receita Criada com sucesso!',
+            newRecipe
+           ) 
+            
+            return result
+           
+        }
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
         }

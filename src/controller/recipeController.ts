@@ -1,30 +1,35 @@
+import { RecipeBusiness } from './../business/recipeBusiness';
 import { Request, Response } from "express";
-import { RecipeBusiness } from "../business/recipeBusiness";
-import { AuthenticationTokenDTO } from "../model/class/DTO/authenticationsDTO";
+import { AuthenticationTokenDTO } from "../model/class/DTO/authenticationsDTOs";
+import * as dto from '../model/class/DTO/recipeDTOs'
 
 
 export class RecipeController {
-    private recipeBusiness = new RecipeBusiness();
 
-    createRecipe = async (req: Request, res: Response) => {
+    constructor(private recipeBusiness: RecipeBusiness) { }
+
+    createRecipe = async (req: Request, res: Response):Promise<void> => {
         try {
 
             const token = req.headers.auth as string
-            const input = new AuthenticationTokenDTO(token)
+            const tokenInput = new AuthenticationTokenDTO(token)
 
-            const create: any = {
-                title: req.body.tittle,
-                description: req.body.description
-            }
+            const { title, description } = req.body
+            const input = new dto.RecipeControllerInputDTO(
+                title,
+                description
+            )
 
-            await this.recipeBusiness.createRecipe(create, input)
+            const result = await this.recipeBusiness.createRecipe(input,tokenInput )
 
-            res.status(201).send({message: "Post criado"})
+            res.status(201).send(result)
 
         } catch (error: any) {
             res.status(400).send(error.message)
         }
-    }
+
+    };
+ }
 
     getById = async (req: Request, res: Response) => {
         try {
@@ -55,4 +60,5 @@ export class RecipeController {
             res.status(100).send(error.message)
         }
     }
+
 }

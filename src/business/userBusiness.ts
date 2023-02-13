@@ -1,5 +1,5 @@
 import { RoleEnum } from './../model/roleENUM';
-import { AuthenticationDataDTO, AuthenticationTokenDTO } from './../model/class/DTO/authenticationsDTO';
+import { AuthenticationDataDTO, AuthenticationTokenDTO } from '../model/class/DTO/authenticationsDTOs';
 import { ValidatePassword } from './../services/validatePassword';
 import { ValidateEmail } from './../services/validatedEmail';
 import { UserRepository } from "./repository/userRepository";
@@ -91,75 +91,50 @@ export class UserBusiness {
         } catch (error: any) {
             throw new CustomError(400, error.message);
         }
-    }
+    };
 
 
 
-    public login = async (input: dto.LoginInputDTO): Promise<AuthenticationTokenDTO> => {
+
+    public getSelfProfile = async (input: AuthenticationTokenDTO): Promise<dto.CreationUserReturnDTO> => {
 
         try {
-
-            const emailExists = await this.userDatabase.emailExists(input.getEmail())
-
-            if (!emailExists) {
-                throw new err.WrongEmail()
-            }
-
-            const hashManager = new HashManager()
-
-            const comparePassword: boolean = await hashManager.compareHash(input.getPassword(), emailExists.password)
-            if (!comparePassword) {
-                throw new err.WrongPassword()
-            } else {
-
-                const authenticator = new Authenticator()
-                const input = new AuthenticationDataDTO(
-                    emailExists.id,
-                    emailExists.role
-                )
-
-                const token = authenticator.generateToken(input)
-                const authenticationTokenDTO = new AuthenticationTokenDTO(token)
-
-                return authenticationTokenDTO
-            }
-
-        } catch (error: any) {
-            throw new CustomError(400, error.message);
-        }
-    }
-
-    
-    
-    public getSelfProfile = async (input:AuthenticationTokenDTO): Promise<dto.CreationUserReturnDTO> => {
-
-        try { 
 
             const authenticator = new Authenticator()
             const { id } = authenticator.getTokenData(input)
 
-            return await this.userDatabase.getUserById(id)         
-            
+            return await this.userDatabase.getUserById(id)
+
         } catch (error: any) {
             throw new CustomError(400, error.message);
         }
-    }
+    };
 
 
 
-        
-    public getUserProfile = async (userId:dto.GetUserProfileInputDTO,input:AuthenticationTokenDTO): Promise<dto.CreationUserReturnDTO> => {
 
-        try { 
+
+    public getUserProfile = async (userId: dto.GetUserProfileInputDTO, input: AuthenticationTokenDTO): Promise<dto.CreationUserReturnDTO> => {
+
+        try {
 
             const authenticator = new Authenticator()
-            authenticator.getTokenData(input)
+           const {id} = authenticator.getTokenData(input)
 
-            return await this.userDatabase.getUserById(userId.getUserId())         
-            
+            if(userId.getUserId() === id ){
+                throw new err.UserIdEqualYourOwnId()
+            }
+
+            const result = await this.userDatabase.getUserById(userId.getUserId())
+
+            if(result.length === 0){
+                throw new err.InvalidUser()
+            }else{
+                return result
+            }
+
         } catch (error: any) {
             throw new CustomError(400, error.message);
         }
-    }
-
+    };
 }
