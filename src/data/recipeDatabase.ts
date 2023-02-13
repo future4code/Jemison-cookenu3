@@ -20,6 +20,7 @@ export class RecipeDatabase extends BaseDatabase implements RecipeRepository {
     };
 
 
+
     public getRecipeByName = async (title:string):Promise<RecipeClass> =>{
         try{
 
@@ -31,4 +32,23 @@ export class RecipeDatabase extends BaseDatabase implements RecipeRepository {
         }
     };
  
+   }
+
+    getById = async (id: string) => {
+        try {
+            RecipeDatabase.connection.initialize()
+            const result: any = await RecipeDatabase.connection(this.TABLE_NAME)
+            .select("*")
+            .where({id})
+
+            return result
+            
+        } catch (error: any) {
+            throw new Error (error.message)
+        } finally {
+            console.log("conexão encerrada");
+            RecipeDatabase.connection.destroy();
+        }
+    }
+
 }

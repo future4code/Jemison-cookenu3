@@ -1,3 +1,4 @@
+
 import { RecipeClass } from './../model/class/recipeClass';
 import { AuthenticationTokenDTO } from '../model/class/DTO/authenticationsDTOs';
 import { RecipeRepository } from './repository/rescieRepository';
@@ -52,6 +53,19 @@ export class RecipeBusiness {
         }
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
+        }
+    }
+
+    getById = async (id: string, input: AuthenticationTokenDTO) => {
+        try {
+
+            const authenticator = new Authenticator()
+            authenticator.getTokenData(input)
+
+            return await this.recipeDatabase.getById(id)
+            
+        } catch (error: any) {
+            throw new CustomError(400, error.message)
         }
     }
 }
