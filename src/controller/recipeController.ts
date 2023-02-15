@@ -8,7 +8,7 @@ export class RecipeController {
 
     constructor(private recipeBusiness: RecipeBusiness) { }
 
-    createRecipe = async (req: Request, res: Response):Promise<void> => {
+    createRecipe = async (req: Request, res: Response): Promise<void> => {
         try {
 
             const token = req.headers.auth as string
@@ -20,7 +20,7 @@ export class RecipeController {
                 description
             )
 
-            const result = await this.recipeBusiness.createRecipe(input,tokenInput )
+            const result = await this.recipeBusiness.createRecipe(input, tokenInput)
 
             res.status(201).send(result)
 
@@ -29,36 +29,23 @@ export class RecipeController {
         }
 
     };
- }
 
-    getById = async (req: Request, res: Response) => {
+    public getRecipeById = async (req: Request, res: Response): Promise<void> => {
         try {
             const token = req.headers.auth as string
-            const input = new AuthenticationTokenDTO(token)
+            const tokenInput = new AuthenticationTokenDTO(token)
 
-            const id = req.params.userId
+            const id = req.params.recipeId
+            const recipeId = new dto.GetRecipeByIdInputDTO(id)
 
-            const result: any = await this.recipeBusiness.getById(input, id)
+            const result = await this.recipeBusiness.getRecipeById(recipeId, tokenInput)
 
-            let message = "Sucess"
-
-            if(!result[0]) {
-                res.statusCode = 404
-                message = "Post not found"
-                throw new Error (message)
-            }
-
-            const post: any = {
-                "id": result[0].id,
-	            "title": result[0].title,
-	            "description": result[0].description,
-	            "createdAt": result[0].created_at
-            }
-            res.status(200).send({message, post, result})
+            res.status(200).send(result)
 
         } catch (error: any) {
             res.status(100).send(error.message)
-        }
+        };
+
     }
 
 }

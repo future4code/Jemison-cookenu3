@@ -11,4 +11,6 @@ const recipeController = new RecipeController(recipeBusiness)
 
 recipeRouter.post("/create", recipeController.createRecipe)
 
+recipeRouter.get('/:recipeId', recipeController.getRecipeById)
+
 

@@ -15,9 +15,28 @@ export class RecipeControllerInputDTO {
     }
 }
 
-export class CreationRecipeReturnDTO{
+export class CreationRecipeReturnDTO {
     constructor(
-        private message:string,
-        private recipe:RecipeClass
-    ){}
+        private message: string,
+        private recipe: RecipeClass
+    ) { }
+}
+
+export class GetRecipeByIdInputDTO {
+    constructor(
+        private recipeId: string
+    ) { }
+
+    public getRecipeId() {
+        return this.recipeId
+    }
+}
+
+export interface GetRecipeByIdReturnDTO {
+    'ID da Receita': string,
+    'Nome da Receita': string,
+    'Modo de Preparo': string,
+    'Receita enviada em': string,
+    'Postado por': string,
+    'ID do Autor':string
 }

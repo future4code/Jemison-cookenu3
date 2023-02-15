@@ -31,7 +31,6 @@ export class UserDatabase extends BaseDatabase implements UserRepository {
 
     public getUserById = async (id: string): Promise<any> => {
         try {
-
             const result = await UserDatabase.connection.raw(`
                 SELECT id AS "ID de Usuário", name AS "Nome", email AS "Email",
                 DATE_FORMAT(STR_TO_DATE(member_since, '%Y-%m-%d %H:%i:%s'), '%d/%m/%Y %H:%i:%s') AS "Membro desde",
