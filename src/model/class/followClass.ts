@@ -18,5 +18,4 @@ export class FollowClass {
     public setFollowedId(newFollowedId: string) {
         this.user_followed_fk = newFollowedId
     }
-
 }
