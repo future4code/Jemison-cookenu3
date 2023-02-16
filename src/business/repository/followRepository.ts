@@ -1,8 +1,10 @@
+import { FollowDTO } from './../../model/class/DTO/followDTOs';
 import { FollowClass } from "../../model/class/followClass"
 
 
-export interface FollowRepository{
+export interface FollowRepository {
 
-    insertRecipe(follow:FollowClass ): Promise<void>
-
+    insertFollow(follow: FollowClass): Promise<void>
+    deleteFollow(input: FollowClass): Promise<void>
+    followExists(input: FollowClass):Promise<any>
 }
