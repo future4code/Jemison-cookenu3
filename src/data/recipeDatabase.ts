@@ -3,6 +3,7 @@ import { TABLE_RECIPES, TABLE_USERS } from './tableNames';
 import { BaseDatabase } from './baseDatabase';
 import { CustomError } from '../error/customError';
 import { RecipeRepository } from '../business/repository/recipeRepository';
+import { GetRecipeByIdReturnDTO } from '../model/class/DTO/recipeDTOs';
 
 
 export class RecipeDatabase extends BaseDatabase implements RecipeRepository {
@@ -51,5 +52,26 @@ export class RecipeDatabase extends BaseDatabase implements RecipeRepository {
             throw new Error (error.message)
         }
     };
+
+    public getUserFeed = async (input:string):Promise<any> => {
+        try {
+           const result = await RecipeDatabase.connection.raw(`
+                SELECT r.id AS "ID da Receita", r.title AS "Nome da Receita",
+                r.description AS "Modo de Preparo",  DATE_FORMAT(STR_TO_DATE(r.created_at, '%Y-%m-%d %H:%i:%s'), '%d/%m/%Y %H:%i:%s') AS "Receita enviada em",
+                u.name AS "Postado por", u.id AS "ID do Autor"
+                FROM ${this.TABLE_NAME} r
+                INNER JOIN ${TABLE_USERS} u ON u.id = r.author_id_fk
+                WHERE ${input}
+                ORDER BY r.created_at DESC
+           `)
+          
+           return result[0]
+            
+        } catch (error: any) {
+            throw new Error (error.message)
+        }
+    };
+
+
 
 }

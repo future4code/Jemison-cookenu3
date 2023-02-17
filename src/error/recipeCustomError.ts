@@ -30,3 +30,9 @@ export class RecipeIdNonExists extends CustomError{
         super(404, 'ID da receita não encontrada no banco de dados.')
     }
 }
+
+export class FollowsEmpty extends CustomError{
+    constructor(){
+        super(404, 'Você não está seguindo nenhum usuário')
+    }
+}

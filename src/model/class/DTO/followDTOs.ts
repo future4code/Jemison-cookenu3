@@ -26,3 +26,9 @@ export class FollowDTO{
     ) { }
     
 }
+
+export class FollowReturnForFeed{
+    constructor(
+        public usuario:string
+    ){}
+}
