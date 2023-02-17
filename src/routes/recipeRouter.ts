@@ -11,10 +11,9 @@ const followDatabase = new FollowDatabase()
 const recipeBusiness = new RecipeBusiness(recipeDatabase, followDatabase)
 const recipeController = new RecipeController(recipeBusiness)
 
-recipeRouter.post("/create", recipeController.createRecipe)
+recipeRouter.get('/userFeed', recipeController.getUserFeed)
 
 recipeRouter.get('/:recipeId', recipeController.getRecipeById)
 
-recipeRouter.get('/userFeed', recipeController.getUserFeed)
-
+recipeRouter.post('/create', recipeController.createRecipe)
 

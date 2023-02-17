@@ -48,7 +48,6 @@ export class RecipeController {
 
     };
 
-
     public getUserFeed = async (req: Request, res: Response): Promise<void> => {
         try {
             const token = req.headers.auth as string
