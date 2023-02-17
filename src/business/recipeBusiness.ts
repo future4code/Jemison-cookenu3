@@ -23,7 +23,6 @@ export class RecipeBusiness {
             const authenticator = new Authenticator()
             const { id } = authenticator.getTokenData(token)
 
-
             if (!input.getTitle()) {
                 throw new err.MissingTitle()
             }
@@ -83,12 +82,12 @@ export class RecipeBusiness {
         }
     };
 
-    public getUserFeed = async (token: AuthenticationTokenDTO):Promise<any> => {
+    public getUserFeed = async (token: AuthenticationTokenDTO): Promise<dto.CreationRecipeReturnDTO[]> => {
         try {         
 
             const authenticator = new Authenticator()
             const { id } = authenticator.getTokenData(token)
-console.log('asdasasdasdasd')
+
             const userFollowsArray = await this.followDatabase.getUserFollows(id)
 
             const createStringForFeed = new CreatStringForFeed()
@@ -98,14 +97,13 @@ console.log('asdasasdasdasd')
                 throw new err.FollowsEmpty()
             } else {
              
-                return await this.recipeDatabase.getUserFeed(stringForFeed)
-            
+               const result = await this.recipeDatabase.getUserFeed(stringForFeed)
+
+               return result            
             }
 
         } catch (error: any) {
             throw new CustomError(400, error.message);
         }
     };
-
-
 }
