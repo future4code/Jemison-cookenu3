@@ -23,3 +23,4 @@ export class InvalidFollow extends CustomError{
         super(404, 'Não é possível deixar de seguir um usuário que você não segue.')
     }
 }
+

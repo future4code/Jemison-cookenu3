@@ -32,6 +32,7 @@ export class GetRecipeByIdInputDTO {
     }
 }
 
+
 export interface GetRecipeByIdReturnDTO {
     'ID da Receita': string,
     'Nome da Receita': string,

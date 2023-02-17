@@ -1,9 +1,10 @@
+import { FollowUserInputDTO } from './../model/class/DTO/followDTOs';
 import { BaseDatabase } from "./baseDatabase";
 import { TABLE_FOLLOWS } from "./tableNames";
 import { FollowClass } from "../model/class/followClass";
 import { FollowRepository } from "../business/repository/followRepository";
 import { CustomError } from "../error/customError";
-import { FollowDTO } from "../model/class/DTO/followDTOs";
+
 
 
 export class FollowDatabase extends BaseDatabase implements FollowRepository {
@@ -20,10 +21,10 @@ export class FollowDatabase extends BaseDatabase implements FollowRepository {
         }
     };
 
-    public followExists = async (input:FollowClass ):Promise<any>=> {
+    public followExists = async (input: FollowClass): Promise<any> => {
         try {
 
-           const result = await FollowDatabase.connection.raw(`
+            const result = await FollowDatabase.connection.raw(`
                 SELECT * FROM ${this.TABLE_NAME}
                 WHERE user_follower_fk = "${input.getFlollowerId()}"
                 AND user_followed_fk ="${input.getFlollowedId()}"
@@ -36,7 +37,7 @@ export class FollowDatabase extends BaseDatabase implements FollowRepository {
         }
     };
 
-    
+
 
     public deleteFollow = async (input: FollowClass): Promise<void> => {
         try {
@@ -52,5 +53,17 @@ export class FollowDatabase extends BaseDatabase implements FollowRepository {
         }
     };
 
+    public getUserFollows = async (input:string ): Promise<any> => {
 
+        try {
+            const result = await FollowDatabase.connection.raw(`
+                SELECT user_followed_fk AS "usuario" FROM ${this.TABLE_NAME}
+                WHERE user_follower_fk = "${input}"
+            `)
+            return result[0]
+
+        } catch (error: any) {
+            throw new CustomError(400, error.message);
+        }
+    };
 }

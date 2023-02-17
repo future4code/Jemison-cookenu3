@@ -8,7 +8,7 @@ export class RecipeController {
 
     constructor(private recipeBusiness: RecipeBusiness) { }
 
-    createRecipe = async (req: Request, res: Response): Promise<void> => {
+    public createRecipe = async (req: Request, res: Response): Promise<void> => {
         try {
 
             const token = req.headers.auth as string
@@ -40,12 +40,27 @@ export class RecipeController {
 
             const result = await this.recipeBusiness.getRecipeById(recipeId, tokenInput)
 
-            res.status(200).send(result)
+            res.status(201).send(result)
 
         } catch (error: any) {
-            res.status(100).send(error.message)
-        };
+            res.status(400).send(error.message)
+        }
 
-    }
+    };
 
+
+    public getUserFeed = async (req: Request, res: Response): Promise<void> => {
+        try {
+            const token = req.headers.auth as string
+            const tokenInput = new AuthenticationTokenDTO(token)
+
+            const result = await this.recipeBusiness.getUserFeed(tokenInput)
+
+            res.status(201).send(result)
+
+        } catch (error: any) {
+            res.status(400).send(error.message)
+        }
+
+    };
 }

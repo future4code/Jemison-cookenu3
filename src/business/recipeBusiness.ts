@@ -1,4 +1,6 @@
-
+import { CreatStringForFeed } from './../services/createStringForFeed';
+import { FollowUserInputDTO } from './../model/class/DTO/followDTOs';
+import { FollowRepository } from './repository/followRepository';
 import { RecipeClass } from './../model/class/recipeClass';
 import { AuthenticationTokenDTO } from '../model/class/DTO/authenticationsDTOs';
 import { RecipeRepository } from './repository/recipeRepository';
@@ -10,9 +12,12 @@ import * as err from '../error/recipeCustomError';
 
 export class RecipeBusiness {
 
-    constructor(private recipeDatabase: RecipeRepository) { }
+    constructor(
+        private recipeDatabase: RecipeRepository,
+        private followDatabase: FollowRepository
+    ) { }
 
-    createRecipe = async (input: dto.RecipeControllerInputDTO, token: AuthenticationTokenDTO): Promise<dto.CreationRecipeReturnDTO> => {
+    public createRecipe = async (input: dto.RecipeControllerInputDTO, token: AuthenticationTokenDTO): Promise<dto.CreationRecipeReturnDTO> => {
         try {
 
             const authenticator = new Authenticator()
@@ -56,7 +61,7 @@ export class RecipeBusiness {
         }
     };
 
-    getRecipeById = async (recipeId: dto.GetRecipeByIdInputDTO, token: AuthenticationTokenDTO): Promise<dto.CreationRecipeReturnDTO> => {
+    public getRecipeById = async (recipeId: dto.GetRecipeByIdInputDTO, token: AuthenticationTokenDTO): Promise<dto.CreationRecipeReturnDTO> => {
         try {
             const authenticator = new Authenticator()
             authenticator.getTokenData(token)
@@ -76,5 +81,31 @@ export class RecipeBusiness {
         } catch (error: any) {
             throw new CustomError(400, error.message)
         }
-    }
+    };
+
+    public getUserFeed = async (token: AuthenticationTokenDTO):Promise<any> => {
+        try {         
+
+            const authenticator = new Authenticator()
+            const { id } = authenticator.getTokenData(token)
+console.log('asdasasdasdasd')
+            const userFollowsArray = await this.followDatabase.getUserFollows(id)
+
+            const createStringForFeed = new CreatStringForFeed()
+            const stringForFeed = createStringForFeed.createStringForFeed(userFollowsArray)
+
+            if (userFollowsArray.length === 0) {
+                throw new err.FollowsEmpty()
+            } else {
+             
+                return await this.recipeDatabase.getUserFeed(stringForFeed)
+            
+            }
+
+        } catch (error: any) {
+            throw new CustomError(400, error.message);
+        }
+    };
+
+
 }
