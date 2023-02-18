@@ -44,4 +44,26 @@ export class UserDatabase extends BaseDatabase implements UserRepository {
             throw new CustomError(400, error.message);
         }
     };
+
+    public getUserByIdWithoutAlias = async (userId: string): Promise<any> => {
+        try {
+            const result = await UserDatabase.connection(this.TABLE_NAME).where('id', userId )
+
+            return result[0]
+
+        } catch (error: any) {
+            throw new Error(error.message)
+        }
+    };
+
+    
+    public deleteUser = async(userId:string):Promise<void>=>{
+        try{
+            
+            await UserDatabase.connection(this.TABLE_NAME).where('id',userId).del()
+
+        }catch (error: any) {
+            throw new Error (error.message)
+        }
+    };
 }

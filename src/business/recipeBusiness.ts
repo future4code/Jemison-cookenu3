@@ -170,4 +170,33 @@ export class RecipeBusiness {
             throw new CustomError(400, error.message);
         }
     };
+
+    public deleteRecipe = async (input: dto.GetRecipeByIdInputDTO, token: AuthenticationTokenDTO): Promise<string> => {
+        try {
+
+            const authenticator = new Authenticator()
+            const { id, role } = authenticator.getTokenData(token)
+
+            const recipeExists = await this.recipeDatabase.getRecipeByIdWithoutAlias(input.getRecipeId())
+            if (!recipeExists) {
+                throw new err.RecipeIdNonExists()
+            } else {
+                if (role === RoleEnum.ADMIN) {
+                    await this.recipeDatabase.deleteRecipe(input.getRecipeId())
+                    return `Administrador Deletou a receita ${recipeExists.title}.`
+                } else if (role === RoleEnum.NORMAL) {
+                    if (id === recipeExists.author_id_fk) {
+                        await this.recipeDatabase.deleteRecipe(input.getRecipeId())
+                        return `Usuário deletou sua receita "${recipeExists.title}".`
+                    } else if (id !== recipeExists.author_id_fk) {
+                        throw new err.ProhibitedActionForThisRoleAccount()
+                    }
+                }
+            }
+
+        } catch (error: any) {
+            throw new CustomError(400, error.message);
+        }
+    };
+
 }

@@ -11,4 +11,6 @@ export interface RecipeRepository {
     updateRecipeTitle(recipeId:string, title:string):Promise<void>
     updateRecipeDescription(recipeId:string, title:string):Promise<void>
     getRecipeByIdWithoutAlias(recipeId: string):Promise<any>
+    deleteRecipe(recipeId:string):Promise<void>
+    deleteAllUserRecipes(userId:string):Promise<void>
  }
