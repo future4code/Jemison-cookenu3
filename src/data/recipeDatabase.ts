@@ -3,7 +3,8 @@ import { TABLE_RECIPES, TABLE_USERS } from './tableNames';
 import { BaseDatabase } from './baseDatabase';
 import { CustomError } from '../error/customError';
 import { RecipeRepository } from '../business/repository/recipeRepository';
-import { GetRecipeByIdReturnDTO } from '../model/class/DTO/recipeDTOs';
+
+
 
 
 export class RecipeDatabase extends BaseDatabase implements RecipeRepository {
@@ -53,6 +54,17 @@ export class RecipeDatabase extends BaseDatabase implements RecipeRepository {
         }
     };
 
+    public getRecipeByIdWithoutAlias = async (recipeId: string):Promise<any> => {
+        try {
+           const result = await RecipeDatabase.connection(this.TABLE_NAME).where('id', recipeId)
+                    
+           return result[0]
+            
+        } catch (error: any) {
+            throw new Error (error.message)
+        }
+    };
+
     public getUserFeed = async (input:string):Promise<any> => {
         try {
            const result = await RecipeDatabase.connection.raw(`
@@ -72,6 +84,21 @@ export class RecipeDatabase extends BaseDatabase implements RecipeRepository {
         }
     };
 
+    public updateRecipeTitle = async(recipeId:string, title:string):Promise<void>=>{
+        try{
+            await RecipeDatabase.connection(this.TABLE_NAME).update('title', title).where('id', recipeId)
 
+        }catch (error: any) {
+            throw new Error (error.message)
+        }
+    };
+    public updateRecipeDescription = async(recipeId:string, description:string):Promise<void>=>{
+        try{
+            await RecipeDatabase.connection(this.TABLE_NAME).update('description', description).where('id', recipeId)
 
+        }catch (error: any) {
+            throw new Error (error.message)
+        }
+    };
+   
 }
