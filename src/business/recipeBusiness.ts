@@ -114,56 +114,62 @@ export class RecipeBusiness {
             const authenticator = new Authenticator()
             const { id, role } = authenticator.getTokenData(token)
 
-            const recipeExists = await this.recipeDatabase.getRecipeByIdWithoutAlias(input.getRecipeId())
 
-            if (!recipeExists) {
-                throw new err.RecipeIdNonExists()
+            const nameRecipeExists = await this.recipeDatabase.getRecipeByName(input.getTitle())
+            if (nameRecipeExists) {
+                throw new err.RecipeTitleAlreadyExists()
             } else {
-                if (input.getTitle() && !input.getDescription()) {
-                    if (role === RoleEnum.ADMIN) {
-                        await this.recipeDatabase.updateRecipeTitle(id, input.getTitle())
-                        return 'Administrador Atualizou o nome da receita'
-                    } else if (role === RoleEnum.NORMAL) {
-                        if (id === recipeExists.author_id_fk) {
-                            await this.recipeDatabase.updateRecipeTitle(id, input.getTitle())
-                            return 'Usuário Atualizou o nome de sua receita'
-                        } else if (id !== recipeExists.author_id_fk) {
-                            throw new err.ProhibitedActionForThisRoleAccount()
-                        }
-                    }
-                }
 
-                if (!input.getTitle() && input.getDescription()) {
-                    if (role === RoleEnum.ADMIN) {
-                        await this.recipeDatabase.updateRecipeDescription(id, input.getDescription())
-                        return 'Administrador Atualizou o modo de preparo da receita'
-                    } else if (role === RoleEnum.NORMAL) {
-                        if (id === recipeExists.author_id_fk) {
-                            await this.recipeDatabase.updateRecipeDescription(id, input.getDescription())
-                            return 'Usuário Atualizou o modo de preparo de sua receita'
-                        } else if (id !== recipeExists.author_id_fk) {
-                            throw new err.ProhibitedActionForThisRoleAccount()
+                const recipeExists = await this.recipeDatabase.getRecipeByIdWithoutAlias(input.getRecipeId())
+                if (!recipeExists) {
+                    throw new err.RecipeIdNonExists()
+                } else {
+                    if (input.getTitle() && !input.getDescription()) {
+                        if (role === RoleEnum.ADMIN) {
+                            await this.recipeDatabase.updateRecipeTitle(id, input.getTitle())
+                            return `Administrador Atualizou o nome da receita "${recipeExists.title}" para "${input.getTitle()}"`
+                        } else if (role === RoleEnum.NORMAL) {
+                            if (id === recipeExists.author_id_fk) {
+                                await this.recipeDatabase.updateRecipeTitle(id, input.getTitle())
+                                return `Usuário Atualizou o nome de sua receita "${recipeExists.title}" para "${input.getTitle()}"`
+                            } else if (id !== recipeExists.author_id_fk) {
+                                throw new err.ProhibitedActionForThisRoleAccount()
+                            }
                         }
                     }
-                }
 
-                if (input.getTitle() && input.getDescription()) {
-                    if (role === RoleEnum.ADMIN) {
-                        await this.recipeDatabase.updateRecipeTitle(id, input.getTitle())
-                        await this.recipeDatabase.updateRecipeDescription(id, input.getDescription())
-                        return 'Administrador Atualizou o nome e modo de preparo da receita'
-                    } else if (role === RoleEnum.NORMAL) {
-                        if (id === recipeExists.author_id_fk) {
+                    if (!input.getTitle() && input.getDescription()) {
+                        if (role === RoleEnum.ADMIN) {
+                            await this.recipeDatabase.updateRecipeDescription(id, input.getDescription())
+                            return `Administrador Atualizou o modo de preparo da receita "${recipeExists.description}" para "${input.getDescription()}"`
+                        } else if (role === RoleEnum.NORMAL) {
+                            if (id === recipeExists.author_id_fk) {
+                                await this.recipeDatabase.updateRecipeDescription(id, input.getDescription())
+                                return `Usuário Atualizou o modo de preparo de sua receita "${recipeExists.description}" para "${input.getDescription()}"`
+                            } else if (id !== recipeExists.author_id_fk) {
+                                throw new err.ProhibitedActionForThisRoleAccount()
+                            }
+                        }
+                    }
+
+                    if (input.getTitle() && input.getDescription()) {
+                        if (role === RoleEnum.ADMIN) {
                             await this.recipeDatabase.updateRecipeTitle(id, input.getTitle())
                             await this.recipeDatabase.updateRecipeDescription(id, input.getDescription())
-                            return 'Usuário Atualizou o nome e o modo de preparo de sua receita'
-                        } else if (id !== recipeExists.author_id_fk) {
-                            throw new err.ProhibitedActionForThisRoleAccount()
+                            return `Administrador Atualizou o nome da receita "${recipeExists.title}" para "${input.getTitle()}" e modo de preparo de "${recipeExists.description}" para "${input.getDescription()}"`
+                        } else if (role === RoleEnum.NORMAL) {
+                            if (id === recipeExists.author_id_fk) {
+                                await this.recipeDatabase.updateRecipeTitle(id, input.getTitle())
+                                await this.recipeDatabase.updateRecipeDescription(id, input.getDescription())
+                                return `Usuário Atualizou o nome de sua receita "${recipeExists.title}" para "${input.getTitle()}" e modo de preparo de "${recipeExists.description}" para "${input.getDescription()}"`
+                            } else if (id !== recipeExists.author_id_fk) {
+                                throw new err.ProhibitedActionForThisRoleAccount()
+                            }
                         }
                     }
-                }
-                if (!input.getTitle() && !input.getDescription()) {
-                    throw new err.MissingTitleAndDescription()
+                    if (!input.getTitle() && !input.getDescription()) {
+                        throw new err.MissingTitleAndDescription()
+                    }
                 }
             }
         } catch (error: any) {

@@ -1,3 +1,4 @@
+import { UserDatabase } from './../data/userDatabase';
 import { UserBusiness } from '../business/userBusiness';
 import { Request, Response } from 'express';
 import * as dto from '../model/class/DTO/userDTOs';
@@ -29,9 +30,6 @@ export class UserController {
 
 
 
-
-
-
   public getSelfProfile = async (req: Request, res: Response): Promise<void> => {
 
     try {
@@ -47,8 +45,6 @@ export class UserController {
       res.status(400).send(error.message);
     }
   };
-
-
   
 
   public getUserProfile = async (req: Request, res: Response): Promise<void> => {
@@ -69,6 +65,4 @@ export class UserController {
       res.status(400).send(error.message);
     }
   };
-
-
 }

@@ -7,4 +7,5 @@ export interface UserRepository {
     getUserById(id: string): Promise<any>
     getUserByIdWithoutAlias(userId: string): Promise<any>
     deleteUser(userId:string):Promise<void>
+    updateUserPassword(newPassword: string, userId:string):Promise<void>
 }

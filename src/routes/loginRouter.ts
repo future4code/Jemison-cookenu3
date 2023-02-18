@@ -11,3 +11,5 @@ const loginBusiness = new LoginBusiness(userDatabase)
 const loginController = new LoginController(loginBusiness)
 
 loginRouter.post('/login', loginController.login)
+
+loginRouter.post('/forgotPassword', loginController.forgotPassword)
