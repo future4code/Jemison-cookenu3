@@ -88,4 +88,26 @@ export class RecipeController {
 
     };
 
+    public deleteRecipe = async (req: Request, res: Response): Promise<void> => {
+        try {
+            const token = req.headers.auth as string
+            const tokenInput = new AuthenticationTokenDTO(token)
+
+            const recipeId = req.params.recipeId 
+            
+            const input = new dto.GetRecipeByIdInputDTO(
+             recipeId,
+            )
+
+            const result = await this.recipeBusiness.deleteRecipe(input, tokenInput)
+
+            res.status(201).send(result)
+
+        } catch (error: any) {
+            res.status(400).send(error.message)
+        }
+
+    };
+
+
 }

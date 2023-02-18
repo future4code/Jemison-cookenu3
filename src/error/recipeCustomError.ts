@@ -39,7 +39,7 @@ export class FollowsEmpty extends CustomError{
 
 export class ProhibitedActionForThisRoleAccount extends CustomError{
     constructor(){
-        super(403, 'Sem uma conta de Administrador, você só pode alterar receitas que você mesmo criou.')
+        super(403, 'Sem uma conta de Administrador, você só pode alterar ou deletar receitas que você mesmo criou.')
     }
 }
 
@@ -48,3 +48,4 @@ export class MissingTitleAndDescription extends CustomError {
         super(422, 'Para atualizar uma receita você precisa de um título e/ou uma descrição.')
     }
 }
+
