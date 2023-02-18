@@ -15,5 +15,7 @@ recipeRouter.get('/userFeed', recipeController.getUserFeed)
 
 recipeRouter.get('/:recipeId', recipeController.getRecipeById)
 
+recipeRouter.put('/update/:recipeId', recipeController.updateRecipe)
+
 recipeRouter.post('/create', recipeController.createRecipe)
 

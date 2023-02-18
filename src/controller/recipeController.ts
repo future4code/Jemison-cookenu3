@@ -1,3 +1,4 @@
+import { RecipeIdNonExists } from './../error/recipeCustomError';
 import { RecipeBusiness } from './../business/recipeBusiness';
 import { Request, Response } from "express";
 import { AuthenticationTokenDTO } from "../model/class/DTO/authenticationsDTOs";
@@ -62,4 +63,29 @@ export class RecipeController {
         }
 
     };
+
+    public updateRecipe = async (req: Request, res: Response): Promise<void> => {
+        try {
+            const token = req.headers.auth as string
+            const tokenInput = new AuthenticationTokenDTO(token)
+
+            const recipeId = req.params.recipeId 
+            const { title, description } = req.body
+
+            const input = new dto.UpdateRecipeInputDTO(
+             recipeId,
+             title,
+             description
+            )
+
+            const result = await this.recipeBusiness.updateRecipe(input, tokenInput)
+
+            res.status(201).send(result)
+
+        } catch (error: any) {
+            res.status(400).send(error.message)
+        }
+
+    };
+
 }

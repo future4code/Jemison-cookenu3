@@ -36,3 +36,15 @@ export class FollowsEmpty extends CustomError{
         super(404, 'Você não está seguindo nenhum usuário')
     }
 }
+
+export class ProhibitedActionForThisRoleAccount extends CustomError{
+    constructor(){
+        super(403, 'Sem uma conta de Administrador, você só pode alterar receitas que você mesmo criou.')
+    }
+}
+
+export class MissingTitleAndDescription extends CustomError {
+    constructor() {
+        super(422, 'Para atualizar uma receita você precisa de um título e/ou uma descrição.')
+    }
+}

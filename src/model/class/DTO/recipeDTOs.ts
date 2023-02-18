@@ -32,6 +32,23 @@ export class GetRecipeByIdInputDTO {
     }
 }
 
+export class UpdateRecipeInputDTO{
+    constructor(
+     private recipeId:string,
+     private title?:string,
+     private description?:string
+    ){}
+    public getRecipeId(){
+        return this.recipeId
+    }
+    public getTitle(){
+        return this.title
+    }
+    public getDescription(){
+        return this.description
+    }
+  
+ }
 
 export interface GetRecipeByIdReturnDTO {
     'ID da Receita': string,
