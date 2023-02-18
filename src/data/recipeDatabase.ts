@@ -111,5 +111,16 @@ export class RecipeDatabase extends BaseDatabase implements RecipeRepository {
             throw new Error (error.message)
         }
     };
+
+    public deleteAllUserRecipes = async(userId:string):Promise<void>=>{
+        try{
+            
+            await RecipeDatabase.connection(this.TABLE_NAME).where('author_id_fk',userId).del()
+
+        }catch (error: any) {
+            throw new Error (error.message)
+        }
+    };
+
    
 }

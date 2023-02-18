@@ -1,4 +1,3 @@
-import { FollowReturnForFeed, FollowUserInputDTO } from './../../model/class/DTO/followDTOs';
 import { FollowClass } from "../../model/class/followClass"
 
 
@@ -8,4 +7,5 @@ export interface FollowRepository {
     deleteFollow(input: FollowClass): Promise<void>
     followExists(input: FollowClass):Promise<any>
     getUserFollows(input:string ): Promise<any>
+    deleteAllUserFollows(userId:string): Promise<void>
 }

@@ -1,4 +1,3 @@
-import { FollowUserInputDTO } from './../model/class/DTO/followDTOs';
 import { BaseDatabase } from "./baseDatabase";
 import { TABLE_FOLLOWS } from "./tableNames";
 import { FollowClass } from "../model/class/followClass";
@@ -61,6 +60,21 @@ export class FollowDatabase extends BaseDatabase implements FollowRepository {
                 WHERE user_follower_fk = "${input}"
             `)
             return result[0]
+
+        } catch (error: any) {
+            throw new CustomError(400, error.message);
+        }
+    };
+
+    
+    public deleteAllUserFollows = async (userId:string): Promise<void> => {
+        try {
+
+            await FollowDatabase.connection.raw(`
+                DELETE FROM ${this.TABLE_NAME}
+                WHERE user_follower_fk = "${userId}" 
+                OR user_followed_fk = "${userId}";           
+            `)
 
         } catch (error: any) {
             throw new CustomError(400, error.message);
