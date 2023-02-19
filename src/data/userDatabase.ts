@@ -66,4 +66,14 @@ export class UserDatabase extends BaseDatabase implements UserRepository {
             throw new Error (error.message)
         }
     };
+
+    
+  public updateUserPassword = async(newPassword: string, userId:string):Promise<void>=>{
+    try{
+        await UserDatabase.connection(this.TABLE_NAME).update('password', newPassword).where('id', userId)
+
+    }catch (error: any) {
+        throw new Error (error.message)
+    }
+};
 }
