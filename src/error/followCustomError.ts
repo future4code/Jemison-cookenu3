@@ -18,6 +18,11 @@ export class InvalidUser extends CustomError{
     }
 }
 
+export class UserAlreadyFollowed extends CustomError{
+    constructor(){
+        super(404, 'Você já segue este usuário.')
+    }
+}
 export class InvalidFollow extends CustomError{
     constructor(){
         super(404, 'Não é possível deixar de seguir um usuário que você não segue.')
