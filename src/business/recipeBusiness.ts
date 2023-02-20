@@ -66,13 +66,13 @@ export class RecipeBusiness {
             const authenticator = new Authenticator()
             authenticator.getTokenData(token)
 
-            if (!recipeId.getRecipeId) {
+            if (recipeId.getRecipeId() == ':recipeId' || !recipeId.getRecipeId()) {
                 throw new err.MissingRecipeId()
             }
 
             const result = await this.recipeDatabase.getRecipeById(recipeId.getRecipeId())
 
-            if (result.length !== 0) {
+            if (result.length === 0) {
                 throw new err.RecipeIdNonExists()
             } else {
                 return result
