@@ -6,7 +6,7 @@ Projeto - Jemison - Coockenu 03  <img src ="https://user-images.githubuserconten
 </h1>
 <hr>
 <h4>
-:plate_with_cutlery: O projeto Cookenu, tem como principal objetivo, reforçar o que foi aprendido de backend ao longo do curso. :pancakes:
+:plate_with_cutlery: O projeto Cookenu, tem como principal objetivo, reforçar o que foi aprendido de backend ao longo do curso.:pancakes:
 </h4>
 <h4>
 Utilizando uma arquitetura em três camadas(Data, Controller e Business), como os conceitos de Herança, Arquitetura limpa, Criptografia e principalmente reforçando ainda mais o conceito de Programação Orientada a Objeto, com criação de classes para todas as funções e na maioria das DTOs utilizadas no projeto e também aprofundando o conceito de autenticação inserindo a parte de Role da conta, onde no caso existe um tipo de conta Normal com funções restritas e uma Administrador.
@@ -52,8 +52,27 @@ Como Utilizar o Projeto:
 <img src ="https://user-images.githubusercontent.com/102265620/220210720-83874ff1-9218-4e5e-94f5-279dbba6b73c.png"/img>
 Endpoinst do projeto
 <img src ="https://user-images.githubusercontent.com/102265620/220211624-cb6b3206-a036-42ee-941f-881481bffce2.png"/img>
+</h2>
+
 ---
-<h2>
+
+
+:yellow_circle: Criar um Usuário/SignUp :man_cook:
+>  Este Endpoint cria um novo usuário a partir dos dados recebidos através do "body".
+>
+> O nome não possui nenhuma restrição
+>
+> O email passa por duas verificações, primeiramente é verificado se o dado possúi formato padrão de email com "nome@conta.com" e então é verificado se o email já foi > cadastrado anteriormente.
+>
+> A senha precisa conter no mínimo 8 caracteres, entre eles deve existir pelo menos uma letra maiúscula, uma minúscula, um número e um caracter especial(!@#$%).
+>
+> A "Role" da conta, precisa ser uma opção entre admin ou normal, sendo que, no caso de não ser adicionada nenhuma role, por padrão a conta é criada como normal.
+>
+> O retorno deste endpoint é composto por: uma mensagem de sucesso, as informações do usuário criado, para facilitar a visualização e o token de validação, que será utilizado no restante dos endpoints.
+
+</br>
+
+
 
 ### Tecnologia Utilizada:
 * Typescript
