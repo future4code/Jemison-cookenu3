@@ -42,15 +42,22 @@ export class FollowBusiness {
                     input.getUserId()
                 )
 
-                await this.followDatabase.insertFollow(newFollow)
+                const followsExist = await this.followDatabase.followExists(newFollow)
 
-                const result = new dto.CreateFollowUserReturnDTO(
-                    'Usuário seguido com sucesso.',
-                    newFollow
-                )
+                if (followsExist.length > 0) {
+                    throw new err.UserAlreadyFollowed()
 
-                return result
+                } else {
 
+                    await this.followDatabase.insertFollow(newFollow)
+
+                    const result = new dto.CreateFollowUserReturnDTO(
+                        'Usuário seguido com sucesso.',
+                        newFollow
+                    )
+
+                    return result
+                }
             }
 
         } catch (error: any) {
@@ -86,9 +93,9 @@ export class FollowBusiness {
 
             const followsExist = await this.followDatabase.followExists(newFollow)
 
-            if(followsExist.length === 0){
+            if (followsExist.length === 0) {
                 throw new err.InvalidFollow()
-            }else{
+            } else {
 
                 await this.followDatabase.deleteFollow(newFollow)
 
