@@ -140,7 +140,7 @@ export class RecipeBusiness {
                 }
             }
 
-            if (!input.getTitle() && input.getDescription() != undefined) {
+            if (!input.getTitle() && input.getDescription()) {
                 if (role === RoleEnum.ADMIN) {
                     await this.recipeDatabase.updateRecipeDescription(id, input.getDescription())
                     return `Administrador Atualizou o modo de preparo da receita "${recipeExists.description}" para "${input.getDescription()}"`
@@ -154,7 +154,7 @@ export class RecipeBusiness {
                 }
             }
 
-            if (input.getTitle() != undefined && input.getDescription() != undefined) {
+            if (input.getTitle() && input.getDescription()) {
                 if (role === RoleEnum.ADMIN) {
                     await this.recipeDatabase.updateRecipeTitle(id, input.getTitle())
                     await this.recipeDatabase.updateRecipeDescription(id, input.getDescription())
