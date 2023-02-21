@@ -1,7 +1,7 @@
 <div>
 <h1>
-<img src = "https://user-images.githubusercontent.com/102265620/220200532-5fa4a52f-6be4-43c8-8214-d0eabbc68d8c.png" /img>
-Projeto - Jemison - Coockenu 03  <img src ="https://user-images.githubusercontent.com/102265620/220200026-f6641029-9ac6-4a6c-ba25-4232984f9e20.png"/img>
+<img src = "https://user-images.githubusercontent.com/102265620/220200532-5fa4a52f-6be4-43c8-8214-d0eabbc68d8c.png" align="center" /img>
+Projeto - Jemison - Coockenu 03  <img src ="https://user-images.githubusercontent.com/102265620/220200026-f6641029-9ac6-4a6c-ba25-4232984f9e20.png" align="center"/img>
 </div>
 </h1>
 <hr>
@@ -19,9 +19,9 @@ O projeto simula uma rede social de receitas contendo as entidades, Usuários:ma
 
 <div>
 <h3>
-<img src ="https://user-images.githubusercontent.com/102265620/220210264-5210a108-b18a-42e4-9c79-e7b7bfd2c02d.png" /img>
+<img src ="https://user-images.githubusercontent.com/102265620/220210264-5210a108-b18a-42e4-9c79-e7b7bfd2c02d.png" align="center" /img>
  Integrantes do grupo:
- <img src = "https://user-images.githubusercontent.com/102265620/220205822-d06a3346-a204-4e35-8838-ed3d22ad8f8b.png"/img>
+ <img src = "https://user-images.githubusercontent.com/102265620/220205822-d06a3346-a204-4e35-8838-ed3d22ad8f8b.png"align="center" /img>
  </h3>
  
 * Leonardo Mizuki Koga
@@ -32,9 +32,9 @@ O projeto simula uma rede social de receitas contendo as entidades, Usuários:ma
 
 
 <h3>
-<img src ="https://user-images.githubusercontent.com/102265620/220208927-bf649bf7-8434-40de-800b-59d1764d7f93.png" /img>
+<img src ="https://user-images.githubusercontent.com/102265620/220208927-bf649bf7-8434-40de-800b-59d1764d7f93.png" align="center" /img>
 Como Utilizar o Projeto:
-<img src = "https://user-images.githubusercontent.com/102265620/220210337-54329eef-2d6f-41e1-a6fa-c419d00af59f.png"/img>
+<img src = "https://user-images.githubusercontent.com/102265620/220210337-54329eef-2d6f-41e1-a6fa-c419d00af59f.png" align="center" /img>
 </h3>
 
 ~~~
@@ -47,9 +47,9 @@ Como Utilizar o Projeto:
 ---
 
 <h2>
-<img src ="https://user-images.githubusercontent.com/102265620/220210720-83874ff1-9218-4e5e-94f5-279dbba6b73c.png"/img>
+<img src ="https://user-images.githubusercontent.com/102265620/220210720-83874ff1-9218-4e5e-94f5-279dbba6b73c.png"align="center" /img>
 Endpoinst do projeto
-<img src ="https://user-images.githubusercontent.com/102265620/220211624-cb6b3206-a036-42ee-941f-881481bffce2.png"/img>
+<img src ="https://user-images.githubusercontent.com/102265620/220211624-cb6b3206-a036-42ee-941f-881481bffce2.png" align="center" /img>
 </h2>
 
 ---
@@ -196,9 +196,9 @@ Endpoinst do projeto
 
 ---
 <h2>
-<img src = "https://user-images.githubusercontent.com/102265620/220228725-e44761c5-c8bd-475c-bbf6-fcbead1e3649.png"/img>
-Tecnologia Utilizada:
-<img src = "https://user-images.githubusercontent.com/102265620/220228789-bba29176-ac68-4ea1-a234-a775faa9b12b.png"/img>
+<img src = "https://user-images.githubusercontent.com/102265620/220228725-e44761c5-c8bd-475c-bbf6-fcbead1e3649.png" align="center" /img>
+Tecnologias Utilizadas:
+<img src = "https://user-images.githubusercontent.com/102265620/220228789-bba29176-ac68-4ea1-a234-a775faa9b12b.png" align="center" /img>
 </h2>
 <h3>
 
