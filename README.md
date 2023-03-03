@@ -9,7 +9,7 @@ Projeto - Jemison - Coockenu 03  <img src ="https://user-images.githubuserconten
 :plate_with_cutlery: O projeto Cookenu, tem como principal objetivo, reforçar o que foi aprendido sobre o conteúdo de Backend, ao longo do curso da Labenu:pancakes:.
 </h4>
 <h4>
-Utilizando uma arquitetura em três camadas(Data, Controller e Business), os conceitos de Herança, Arquitetura limpa, Criptografia e principalmente reforçando ainda mais o conceito de Programação Orientada a Objeto, com criação de classes para todas as funções na maioria das DTOs utilizadas no projeto, também aprofundando o conceito de autenticação inserindo a parte de Role da conta, onde no caso, existe um tipo de conta Normal com funções restritas e uma conta de Administrador.
+Utilizando uma arquitetura em três camadas(Data, Controller e Business), os conceitos de Herança, Arquitetura limpa, Criptografia e principalmente reforçando ainda mais o conceito de Programação Orientada a Objeto, com criação de classes para todas as funções e na maioria das DTOs utilizadas no projeto, também aprofundando o conceito de autenticação inserindo a parte de Role da conta, onde no caso, existe um tipo de conta Normal com funções restritas e uma conta de Administrador.
 </h4>
 <h4>
 O projeto simula uma rede social de receitas contendo as entidades, Usuários:man_cook:, Receitas:meat_on_bone: e Seguidores:twisted_rightwards_arrows:, composta pelas ações mais comuns em redes sociais, como criar um usuário, criar uma receita, verificar uma receita postada, seguir um usuário, receber um feed com as receitas postadas por todos os usuários seguidos, verificar o profile, atualizar posts e até deletar contas.
