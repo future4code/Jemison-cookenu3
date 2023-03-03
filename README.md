@@ -60,7 +60,7 @@ Endpoinst do projeto
 >
 > O nome não possui nenhuma restrição
 >
-> O email passa por duas verificações, primeiramente é verificado se o dado possúi formato padrão de email com "nome@conta.com" e então é verificado se o email já foi > cadastrado anteriormente.
+> O email passa por duas verificações, primeiramente é verificado se o dado possúi formato padrão de email com "nome@conta.com" e então é verificado se o email já foi cadastrado anteriormente.
 >
 > A senha precisa conter no mínimo 8 caracteres, entre eles deve existir pelo menos uma letra maiúscula, uma minúscula, um número e um caracter especial(!@#$%).
 >
@@ -134,7 +134,7 @@ Endpoinst do projeto
 </br>
 
 :green_circle: **Buscar o Feed de um usuário** :man_cook::meat_on_bone:
-> Este endpoint utiliza o ID retirado do token de autenticação, recebido através do "headers", para criar um feed com as receitas postados pelos usuários que a conta >segue, ordenado por ordem de criação das receita.
+> Este endpoint utiliza o ID retirado do token de autenticação, recebido através do "headers", para criar um feed com as receitas postados pelos usuários que a conta segue, ordenado por ordem de criação das receita.
 </br>
 
 :yellow_circle: **Seguir um usuário** :twisted_rightwards_arrows:
@@ -172,7 +172,7 @@ Endpoinst do projeto
 :red_circle: **Deletar uma conta** :man_cook: 
 >Este endpoint deleta a conta de um usuário e todas as relações que ele possui no banco de dados.
 >
-> Ele deve receber um token de autenticação através do "headers" e o ID do usuário a ter a conta deletada, através do "params", então haverá uma verificação se o >usuário existe no banco de dados.
+> Ele deve receber um token de autenticação através do "headers" e o ID do usuário a ter a conta deletada, através do "params", então haverá uma verificação se o usuário existe no banco de dados.
 >
 > Uma conta Administradora, poderá deletar qualquer outra conta de usuário, enqunato uma conta Normal poderá apenas excluir sua própria conta.
 >
@@ -180,13 +180,13 @@ Endpoinst do projeto
 </br>
 
 :yellow_circle: **Esqueci minha senha** :man_cook::question:
->Este endpoint para funcionar corretamente, deveria enviar um link com uma página feita em frontend que levaria ao endpoint de trocar a senha do usuário, sem precisar >de nenhum tipo de autenticação, desta forma, ao usuário entrar na conta de email enviada, estaria provando que a conta realmente é sua e poderia trocar a senha.
+>Este endpoint para funcionar corretamente, deveria enviar um link com uma página feita em frontend que levaria ao endpoint de trocar a senha do usuário, sem precisar de nenhum tipo de autenticação, desta forma, ao usuário entrar na conta de email enviada, estaria provando que a conta realmente é sua e poderia trocar a senha.
 >
 > Porém para conseguirmos testar este endpoint, a senha é trocada automaticamente e enviada para o email recebido através do "body".
 >
-> Desta forma é possível ao menos testar este recurso do Projeto, porém não seria funcional em um ambiente real, tendo em vista que qualquer usuário conseguiria trocar >a senha de outro usuário apenas sabendo o email cadastrado. Mesmo não tendo acesso ao email, poderia gerar trocas de senhas sem a solicitação do próprio dono da >conta.
+> Desta forma é possível ao menos testar este recurso do Projeto, porém não seria funcional em um ambiente real, tendo em vista que qualquer usuário conseguiria trocar >a senha de outro usuário apenas sabendo o email cadastrado. Mesmo não tendo acesso ao email, poderia gerar trocas de senhas sem a solicitação do próprio dono da conta.
 >
->Este endpoint retorna uma mensagem confirmando o envio do email e a partir deste momento, o usuário precisa entrar em seu email e pegar a nova senha para realizar o >login.
+>Este endpoint retorna uma mensagem confirmando o envio do email e a partir deste momento, o usuário precisa entrar em seu email e pegar a nova senha para realizar o login.
 </br>
 
 ---
