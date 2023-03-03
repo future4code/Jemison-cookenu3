@@ -117,7 +117,7 @@ Endpoinst do projeto
 >
 > O ID de uma receita que deverá ser recebido através do "params"
 >
-> Um novo título para a receita e/ou um novo modo de preparo para a receita, recebidos atrav´s do "body".Sendo obrigatório pelo menos uma, entre esseas duas opções e  >no caso do novo título, mesmo se houver apenas ele para atualizar ou ele estiver junto com uma nova descrição, ele passará por uma verificação se há uma receita com >mesmo nome.
+> Um novo título para a receita e/ou um novo modo de preparo para a receita, recebidos através do "body".Sendo obrigatório pelo menos uma, entre esseas duas opções e no caso do novo título, mesmo se houver apenas ele para atualizar ou ele estiver junto com uma nova descrição, ele passará por uma verificação se há uma receita com mesmo nome.
 >
 > As contas de Administrador, podem alterar qualquer receita, enquanto as contas Normais, podem alterar apenas as receitas de própria autoria.
 >
