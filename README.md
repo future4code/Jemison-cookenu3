@@ -184,7 +184,7 @@ Endpoinst do projeto
 >
 > Porém para conseguirmos testar este endpoint, a senha é trocada automaticamente e enviada para o email recebido através do "body".
 >
-> Desta forma é possível ao menos testar este recurso do Projeto, porém não seria funcional em um ambiente real, tendo em vista que qualquer usuário conseguiria trocar >a senha de outro usuário apenas sabendo o email cadastrado. Mesmo não tendo acesso ao email, poderia gerar trocas de senhas sem a solicitação do próprio dono da conta.
+> Desta forma é possível ao menos testar este recurso do Projeto, porém não seria funcional em um ambiente real, tendo em vista que qualquer usuário conseguiria trocar a senha de outro usuário apenas sabendo o email cadastrado. Mesmo não tendo acesso ao email, poderia gerar trocas de senhas sem a solicitação do próprio dono da conta.
 >
 >Este endpoint retorna uma mensagem confirmando o envio do email e a partir deste momento, o usuário precisa entrar em seu email e pegar a nova senha para realizar o login.
 </br>
