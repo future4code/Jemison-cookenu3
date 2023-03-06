@@ -1,0 +1,162 @@
+[
+    {
+        "id":"18ea68cd-313f-4fa0-8758-62051155977c",
+        "name":"Gabriela Melo",
+        "emal":"gabimelo@gmail.com",
+        "password":"Lj985!247",
+        "role":"normal",
+        "member_since":"2020-01-02 10:03:44"
+    },
+    {
+        "id":"ebdacddd-bbb5-4c43-9dae-ca8a090a7379",
+        "name":"Igor Nunes",
+        "emal":"inunes@outlook.com.br",
+        "password":"Vw852@617",
+        "role":"normal",
+        "member_since":"2020-01-05 14:47:12"
+    },
+    {
+        "id":"ae2d5563-17eb-43f6-a8de-9eed2745188f",
+        "name":"Carla Ribeiro",
+        "emal":"carlari@yahoo.com.br",
+        "password":"Nr751#931",
+        "role":"normal",
+        "member_since":"2020-03-17 05:21:54"
+    },
+    {
+        "id":"d9780c5d-b00e-4234-ab8d-50a7b2ceb22a",
+        "name":"Jean Gonçalves",
+        "emal":"jeangoncalves@gmail.com",
+        "password":"Pq539$321",
+        "role":"normal",
+        "member_since":"2020-05-04 18:25:17"
+    },
+    {
+        "id":"c606d12a-fc2b-4f49-b7ce-98cba59c1397",
+        "name":"Sonia Alves",
+        "emal":"soninhalves@outlook.com.br",
+        "password":"Gf792%528",
+        "role":"admin",
+        "member_since":"2020-11-122 11:15:24"
+    },
+    {
+        "id":"ec61f7f6-840d-4088-9c04-8ed0aca8f25c",
+        "name":"Marcelo Cardoso",
+        "emal":"marcelocard@yahoo.com.br",
+        "password":"Ic914!378",
+        "role":"normal",
+        "member_since":"2021-04-23 17:45:01"
+    },
+    {
+        "id":"c305acbc-f973-4c12-8789-1518a0aa6d23",
+        "name":"Silvana Moreira",
+        "emal":"mosilvana@gmail.com",
+        "password":"Me947@831",
+        "role":"normal",
+        "member_since":"2021-06-26 09:04:18"
+    },
+    {
+        "id":"8dbff690-6dbe-4ef8-bb95-c6fdfd02cc64",
+        "name":"Pedro Santos",
+        "emal":"pedrosantos@outlook.com.br",
+        "password":"Hz692#741",
+        "role":"normal",
+        "member_since":"2021-09-07 20:03:44"
+    },
+    {
+        "id":"bd7c25f6-3a37-4d27-82db-a2ca80ef145a",
+        "name":"Barbara Freitas",
+        "emal":"barbfreitas@yahoo.com.br",
+        "password":"St078$101",
+        "role":"normal",
+        "member_since":"2021-12-18 13:14:58"
+    },
+    {
+        "id":"cd63b9b7-4db1-4a72-b32d-be2bef2ef742",
+        "name":"Felipe Pereira",
+        "emal":"fepereira@gmail.com",
+        "password":"Vu830%691",
+        "role":"admin",
+        "member_since":"2021-12-21 19:18:34"
+    },
+    {
+        "id":"1af6459b-c9ef-407d-8a7f-13245f0c8e2e",
+        "name":"Patrícia Batista",
+        "emal":"patybatista@outlook.com.br",
+        "password":"Dx843!074",
+        "role":"normal",
+        "member_since":"2022-02-01 23:40:41"
+    },
+    {
+        "id":"efea6c08-efc2-4822-a0c5-d794d575f7b2",
+        "name":"Daniel Castro",
+        "emal":"dancastro@yahoo.com.br",
+        "password":"Rp287@509",
+        "role":"normal",
+        "member_since":"2022-05-14 03:40:05"
+    },
+    {
+        "id":"09f1ffb2-4746-4f8a-8da2-e892e923520b",
+        "name":"Denise Garcia",
+        "emal":"deniseg@gmail.com",
+        "password":"Tj476#086",
+        "role":"normal",
+        "member_since":"2022-08-19 22:20:44"
+    },
+    {
+        "id":"d8863eeb-d9ca-4e81-9586-5d65abe41dcf",
+        "name":"Rafael Moraes",
+        "emal":"rafamoraes@outlook.com.br",
+        "password":"Aw742$687",
+        "role":"normal",
+        "member_since":"2022-10-29 15:17:36"
+    },
+    {
+        "id":"0ea881f0-5a86-4f98-b8f6-b7bedc8f67d4",
+        "name":"Janaina Soares",
+        "emal":"jansoares@yahoo.com.br",
+        "password":"Gh852%147",
+        "role":"admin",
+        "member_since":"2022-11-04 09:28:15"
+    },
+    {
+        "id":"d5fbea4c-0175-48d9-bdca-958278eda707",
+        "name":"Flávio Vieira",
+        "emal":"flavieira@gmail.com",
+        "password":"Rj789!321",
+        "role":"normal",
+        "member_since":"2023-01-15 21:30:36"
+    },
+    {
+        "id":"8c4e4c88-5831-4112-b0bf-b8df865c0a92",
+        "name":"Rita Carvalho",
+        "emal":"ritacarvalho@outlook.com.br",
+        "password":"Mv428@965",
+        "role":"normal",
+        "member_since":"2023-04-20 19:18:52"
+    },
+    {
+        "id":"9c9d4b4b-bfc8-46a6-a33b-e0f3ffbaf41b",
+        "name":"Walter Nascimento",
+        "emal":"walternasc@yahoo.com.br",
+        "password":"Qn683#713",
+        "role":"normal",
+        "member_since":"2023-05-23 06:00:00"
+    },
+    {
+        "id":"29a12696-37d6-42e1-a638-b523aabe9de2",
+        "name":"Maria Fernandes",
+        "emal":"mariafer@gmail.com",
+        "password":"Zr772$058",
+        "role":"normal",
+        "member_since":"2023-09-13 12:45:12"
+    },
+    {
+        "id":"c0d0581d-cdb2-4676-b492-6c023af37cb0",
+        "name":"Carlos Borges",
+        "emal":"borgescarlos@outlook.com.br",
+        "password":"Cs020%307",
+        "role":"admin",
+        "member_since":"2023-11-08 04:20:16"
+    }
+]
